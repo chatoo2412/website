@@ -19,7 +19,9 @@
     "start": "run-p start:repl start:docusaurus",
     "start:docusaurus": "cd website && yarn start",
     "start:repl": "webpack -d -w",
-    "test": "remark docs README.md --quiet"
+    "test": "remark docs README.md --quiet",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "remarkConfig": {
     "plugins": {
@@ -82,7 +84,8 @@
     "react-instantsearch": "^5.1.0",
     "semver": "^5.4.1",
     "unfetch": "^3.0.0",
-    "worker-loader": "^1.1.1"
+    "worker-loader": "^1.1.1",
+    "snyk": "^1.316.1"
   },
   "lint-staged": {
     "js/**/*.js": [
@@ -97,5 +100,6 @@
       "eslint --format=codeframe --fix",
       "git add"
     ]
-  }
+  },
+  "snyk": true
 }
